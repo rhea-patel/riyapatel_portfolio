@@ -1,4 +1,4 @@
-// src/types/types.ts
+
 export interface About {
   name: string;
   role: string;
@@ -47,4 +47,19 @@ export interface ContactForm {
     name: string;
     email: string;
     message: string;
+}
+
+export interface Particle {
+  x: number;
+  y: number;
+  size: number;
+  speedX: number;
+  speedY: number;
+  color: string;
+}
+
+export interface CodeChar {
+  x: number;
+  y: number;
+  text: string;
 }

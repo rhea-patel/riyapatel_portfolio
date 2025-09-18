@@ -1,27 +1,20 @@
-// src/pages/ContactPage.tsx
 import ContactSection from "../components/contact";
+import "../index.css";
 
 export default function ContactPage() {
     return (
-    <div>
-        
+    <div style={{ textAlign: "center", padding: "2rem" }}>
         <ContactSection />
 
         <a
-        href="frontend/Riya_Patel_Resume.pdf" 
+        href="/Riya_Patel_Resume.pdf"
+        target="_blank"
         download
-        style={{
-            display: "inline-block",
-            marginTop: "1rem",
-            padding: "0.5rem 1rem",
-            backgroundColor: "#ed3030ff",
-            color: "#fff",
-            borderRadius: "5px",
-            textDecoration: "none",
-        }}
+        className="resume-btn"
         >
         Download Resume
         </a>
     </div>
     );
 }
+

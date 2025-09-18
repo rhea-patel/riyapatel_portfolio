@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import type { Contact } from "../types/types";
 import { fetchContact } from "../api";
+import "../index.css";
 
 export default function ContactSection() {
     const [contact, setContact] = useState<Contact | null>(null);
@@ -12,8 +13,8 @@ export default function ContactSection() {
     if (!contact) return <p>Loading Contact...</p>;
 
     return (
-    <section style={{ marginBottom: "2rem", padding: "1rem", border: "1px solid #ddd", borderRadius: "8px" }}>
-        <h2>Contact</h2>
+    <section className="contact-section">
+        <h2>Contact Me</h2>
         <p>Email: <a href={`mailto:${contact.email}`}>{contact.email}</a></p>
         <p>Phone: {contact.phone}</p>
         <p>LinkedIn: <a href={contact.linkedin} target="_blank" rel="noreferrer">{contact.linkedin}</a></p>

@@ -36,19 +36,19 @@ const Footer: React.FC = () => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <FaLinkedin size={24} />
+            <FaLinkedin size={25} />
           </a>
           <a
             href="https://github.com/rhea-patel"
             target="_blank"
             rel="noopener noreferrer"
           >
-            <FaGithub size={24} />
+            <FaGithub size={25} />
           </a>
           <a
             href="mailto:riya.patel2430@gmail.com"
           >
-            <FaEnvelope size={24} />
+            <FaEnvelope size={25} />
           </a>
         </div>
       </div>

@@ -9,22 +9,9 @@ import ContactPage from "./pages/contactpage";
 import "./index.css";
 import DraggableNav from "./components/DraggableNav";
 import Footer from "./components/foot";
+import type { CodeChar, Particle } from "./types/types";
 
-// Define interfaces for type safety
-interface Particle {
-  x: number;
-  y: number;
-  size: number;
-  speedX: number;
-  speedY: number;
-  color: string;
-}
 
-interface CodeChar {
-  x: number;
-  y: number;
-  text: string;
-}
 
 const AnimationContainer: React.FC = () => {
   const particleCanvasRef = useRef<HTMLCanvasElement>(null);

@@ -1,5 +1,5 @@
-from fastapi import FastAPI
-from fastapi.middleware.cors import CORSMiddleware
+from fastapi import FastAPI # pyright: ignore[reportMissingImports]
+from fastapi.middleware.cors import CORSMiddleware # pyright: ignore[reportMissingImports]
 
 app = FastAPI()
 
@@ -104,9 +104,9 @@ def get_skills():
 def get_projects():
     return projects
 
-@app.get("/employment")
-def get_employment():
-    return employment
+# @app.get("/employment")
+# def get_employment():
+#     return employment
 
 @app.get("/education")
 def get_education():

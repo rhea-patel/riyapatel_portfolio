@@ -22,88 +22,53 @@ body {
   height: 100dvh;
 }
 
-/* #particleCanvas,
-#scannerCanvas {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 10;
-} */
-/* 
-.scanner {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 50%;
-    width: 4px;
-    height: 100vh;
-    background: linear-gradient(
-        to bottom,
-        rgba(0, 255, 255, 0),
-        #00ffff,
-        rgb(0, 255, 255),
-        rgba(0, 255, 255, 0)
-    );
-    z-index: 20;
-    transform: translateX(-50%);
-    box-shadow: 0 0 15px cyan;
-    animation: scanner-move 10s infinite linear;
+.contact-section {
+  max-width: 700px;
+  margin: 3rem auto;
+  padding: 2rem;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  background: #fefefe;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  text-align: center;
 }
 
-.card-stream {
-    position: absolute;
-    top: 50%;
-    left: 0;
-    width: 100%;
-    height: 2px;
-    background: linear-gradient(
-        to right,
-        rgba(255, 255, 255, 0),
-        rgba(255, 255, 255, 0.8),
-        rgba(255, 255, 255, 0)
-    );
-    transform: translateY(-50%);
-    z-index: 15;
-    box-shadow: 0 0 10px white;
-    overflow: hidden;
-}
-
-.card-line {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 200%;
-    height: 100%;
-    background: white;
-    box-shadow: 0 0 15px white;
-    transform: translateX(-50%);
-}
-
-@keyframes scanner-move {
-    0% {
-        left: 0;
-    }
-    100% {
-        left: 100%;
-    }
-}
-@media (max-width: 768px) {
-  .container {
-    padding: 1.5rem;
-    margin: 1rem;
-  }
-}
-h1, h2, h3, h4, h5, h6 {
-  color: #333;
+.contact-section h2 {
+  font-size: 2rem;
   margin-bottom: 1rem;
+  color: #e34292;
 }
-p {
-  color: #555;
-  line-height: 1.6;
-  margin-bottom: 1rem;
-} */
+
+.contact-section p {
+  font-size: 1rem;
+  margin: 0.5rem 0;
+}
+
+.contact-section a {
+  color: #e34292;
+  text-decoration: none;
+}
+
+.contact-section a:hover {
+  color: #ff69b4;
+}
+
+.resume-btn {
+  display: inline-block;
+  margin-top: 1.5rem;
+  padding: 0.75rem 1.5rem;
+  background-color: #e34292;
+  color: #fff;
+  font-weight: bold;
+  border-radius: 50px;
+  text-decoration: none;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.resume-btn:hover {
+  background-color: #ff69b4;
+  transform: scale(1.05);
+}
 
 /* Nav.css or your main stylesheet */
 .navbar {
@@ -417,8 +382,8 @@ p {
 /* Track containing duplicated cards for seamless scroll */
 .projects-track {
   display: inline-flex; /* ensures exact width of all cards */
-  gap: 1.5rem;
-  animation: scroll 85s linear infinite;
+  gap: 1.2rem;
+  animation: scroll 120s linear infinite;
   align-items: center; /* vertical centering of cards */
 }
 
@@ -584,11 +549,11 @@ p {
 
 .footer-wrapper {
     z-index: 1;
-    --footer-background: #e34293;
+    --footer-background: #e34292;
     display: grid;
     position: fixed;
     grid-area: footer;
-    height: 8%;
+    height: 3.5rem;
     bottom:0;
     width: 100%;
     
