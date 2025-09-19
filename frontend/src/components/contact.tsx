@@ -13,12 +13,13 @@ export default function ContactSection() {
     if (!contact) return <p>Loading Contact...</p>;
 
     return (
-    <section className="contact-section">
-        <h2>Contact Me</h2>
+    <section className="contact-section"><main>
+            <h2>Contact Me</h2>
+            
         <p>Email: <a href={`mailto:${contact.email}`}>{contact.email}</a></p>
         <p>Phone: {contact.phone}</p>
         <p>LinkedIn: <a href={contact.linkedin} target="_blank" rel="noreferrer">{contact.linkedin}</a></p>
-        <p>GitHub: <a href={contact.github} target="_blank" rel="noreferrer">{contact.github}</a></p>
+        <p>GitHub: <a href={contact.github} target="_blank" rel="noreferrer">{contact.github}</a></p></main>
     </section>
     );
 }

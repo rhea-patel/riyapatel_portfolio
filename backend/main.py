@@ -1,8 +1,20 @@
+from mailbox import Message
+import stat
 from fastapi import FastAPI # pyright: ignore[reportMissingImports]
 from fastapi.middleware.cors import CORSMiddleware # pyright: ignore[reportMissingImports]
+from fastapi_mail import FastMail, MessageSchema, ConnectionConfig # type: ignore
 
 app = FastAPI()
 
+conf = ConnectionConfig(
+    MAIL_USERNAME="your_email@gmail.com",
+    MAIL_PASSWORD="your_password",
+    MAIL_FROM="your_email@gmail.com",
+    MAIL_PORT=587,
+    MAIL_SERVER="smtp.gmail.com",
+    MAIL_TLS=True,
+    MAIL_SSL=False,
+)
 
 origins = [
     "http://localhost:5173/"
@@ -114,6 +126,13 @@ def get_education():
 
 
 @app.post("/contact")
-def post_contact(info: dict):
-    # Here you would typically save the contact info to a database or send an email
-    return {"message": "Contact information received", "data": info}
+async def send_message(msg: Message):
+    # Here you can:
+    # 1. Save to a database
+    # 2. Send an email notification
+    # For now, just print it
+    print("New message:", msg)
+    return JSONResponse( # type: ignore
+        status_code=stat.HTTP_200_OK,
+        content={"message": "Message sent successfully!"}
+    )
