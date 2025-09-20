@@ -43,23 +43,8 @@ export interface Education {
 }
 
 
-export interface ContactForm {
-    name: string;
-    email: string;
-    message: string;
-}
-
-export interface Particle {
-  x: number;
-  y: number;
-  size: number;
-  speedX: number;
-  speedY: number;
-  color: string;
-}
-
-export interface CodeChar {
-  x: number;
-  y: number;
-  text: string;
+export interface ContactFormData {
+  name: string;
+  email: string;
+  message: string;
 }
