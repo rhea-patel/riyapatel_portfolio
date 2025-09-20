@@ -26,7 +26,7 @@ const App: React.FC = () => {
                 </defs>
             </svg>
     
-                <main>
+            <main>
                     <Routes>
                         <Route path="/" element={<Home />} />
                         <Route path="/projects" element={<ProjectsPage />} />
@@ -43,11 +43,11 @@ const App: React.FC = () => {
 
 
 const AppWrapper: React.FC = () => {
-  return (
+    return (
     <BrowserRouter>
-      <App />
+        <App />
     </BrowserRouter>
-  )
+    )
 }
 
 export default AppWrapper;

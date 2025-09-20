@@ -97,7 +97,21 @@ export default function ContactSection() {
         </form>
 
         {status && <p className="form-status">{status}</p>}
-
+        
+         {/* Resume Preview */}
+        <div className="resume-section" style={{ marginTop: "2rem" }}>
+          <h3>Preview My Resume</h3>
+          <a
+            href="/Riya_Patel_Resume.pdf"
+            target="_blank"
+            rel="noreferrer"
+            className="resume-button"
+          >
+            <FaDownload style={{ marginRight: "0.5rem" }} />
+            View / Download Resume
+          </a>
+        </div>
+        
         {/* Social Icons */}
         <div style={{ display: "flex", justifyContent: "center", gap: "1rem", marginTop: "1rem" }}>
           {socialLinks.map((link, idx) => (
@@ -112,20 +126,6 @@ export default function ContactSection() {
               {link.icon}
             </a>
           ))}
-        </div>
-
-        {/* Resume Preview */}
-        <div className="resume-section" style={{ marginTop: "2rem" }}>
-          <h3>Preview My Resume</h3>
-          <a
-            href="/Riya_Patel_Resume.pdf"
-            target="_blank"
-            rel="noreferrer"
-            className="resume-button"
-          >
-            <FaDownload style={{ marginRight: "0.5rem" }} />
-            View / Download Resume
-          </a>
         </div>
       </main>
     </section>
