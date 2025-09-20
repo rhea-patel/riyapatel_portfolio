@@ -14,19 +14,19 @@ load_dotenv("main.env")
 EMAIL_USER = os.getenv("EMAIL_USER")   # Gmail address used to send
 EMAIL_PASS = os.getenv("EMAIL_PASS")   # Gmail App Password
 EMAIL_TO = os.getenv("EMAIL_TO")       # Destination inbox
-FRONTEND_URL = os.getenv("FRONTEND_URL", "http://localhost:5173")
+FRONTEND_URL = os.getenv("FRONTEND_URL", "https://riyapatel-portfolio.vercel.app/")
 
 
 app = FastAPI()
 
 
 origins = [
-    "http://localhost:5173/"
+    "https://riyapatel-portfolio.vercel.app/"
 ]
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173"],      # Allowed Localhost for development
+    allow_origins=["https://riyapatel-portfolio.vercel.app/"],      # Allowed deployed link for development
     allow_credentials=True,
     allow_methods=["*"],       
     allow_headers=["*"],        
