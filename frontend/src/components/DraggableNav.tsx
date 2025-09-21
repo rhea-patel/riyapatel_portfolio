@@ -1,35 +1,45 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 
 const DraggableNav: React.FC = () => {
-    const location = useLocation();
+  const location = useLocation();
+  const [open, setOpen] = useState(false);
 
-    const navItems = [
+  const navItems = [
     { name: "Home", path: "/" },
     { name: "Projects", path: "/projects" },
     { name: "Education", path: "/education" },
-//    { name: "Employment", path: "/employment" }, 
     { name: "Skills", path: "/skills" },
     { name: "Contact", path: "/contact" },
-    ];
+  ];
 
-    return (
+  return (
     <nav className="navbar">
-        <ul className="nav-list">
+      <div className="nav-header">
+        <button className="menu-toggle" onClick={() => setOpen(!open)}>
+          <span className={`bar ${open ? "open" : ""}`}></span>
+          <span className={`bar ${open ? "open" : ""}`}></span>
+          <span className={`bar ${open ? "open" : ""}`}></span>
+        </button>
+      </div>
+
+      <ul className={`nav-list ${open ? "open" : ""}`}>
         {navItems.map((item) => (
-            <li className="nav-item" key={item.name}>
+          <li className="nav-item" key={item.name}>
             <Link
-                to={item.path}
-                className={`nav-link ${location.pathname === item.path ? "active" : ""}`}
+              to={item.path}
+              className={`nav-link ${
+                location.pathname === item.path ? "active" : ""
+              }`}
+              onClick={() => setOpen(false)} // closes menu on click
             >
-                <span className="nav-text">{item.name}</span>
+              {item.name}
             </Link>
-            </li>
+          </li>
         ))}
-        </ul>
+      </ul>
     </nav>
-    );
+  );
 };
 
 export default DraggableNav;
-

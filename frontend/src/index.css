@@ -125,14 +125,15 @@ p{
   }
 }
 
-/* Nav.css or your main stylesheet */
+/* Desktop Styles */
 .navbar {
   background: white;
-  padding: 10px;
+  padding: 10px 20px;
   border-radius: 50px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
   display: flex;
   justify-content: center;
+  align-items: center;
   position: fixed;
   top: 20px;
   left: 50%;
@@ -142,11 +143,9 @@ p{
 
 .nav-list {
   list-style: none;
-  margin: 0;
-  padding: 0;
   display: flex;
-  justify-content: center;
   gap: 10px;
+  transition: max-height 0.3s ease;
 }
 
 .nav-item {
@@ -195,6 +194,82 @@ p{
 .nav-link.active::before {
   transform: scale(1);
 }
+
+/* ---------------- */
+/* Mobile Styles    */
+/* ---------------- */
+
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 24px;
+  height: 18px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 1100;
+}
+
+.bar {
+  display: block;
+  width: 100%;
+  height: 3px;
+  background-color: #651313;
+  transition: all 0.3s ease;
+}
+
+.bar.open:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.bar.open:nth-child(2) {
+  opacity: 0;
+}
+
+.bar.open:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px 15px;
+    border-radius: 20px;
+    width: 90%;
+  }
+
+  .menu-toggle {
+    display: flex;
+    margin-bottom: 5px;
+  }
+
+  .nav-list {
+    flex-direction: column;
+    width: 100%;
+    max-height: 0;
+    overflow: hidden;
+    gap: 0;
+  }
+
+  .nav-list.open {
+    max-height: 500px; /* enough space to show all links */
+  }
+
+  .nav-item {
+    width: 100%;
+  }
+
+  .nav-link {
+    display: block;
+    padding: 10px;
+    font-size: 1em;
+    border-radius: 10px;
+  }
+}
+
 
 .about-container {
   max-width: 800px;
@@ -409,6 +484,7 @@ p{
 }
 
 /* Container for the Projects section */
+/* Container */
 .projects-container {
   max-width: 1200px;
   margin: 4rem auto;
@@ -416,46 +492,46 @@ p{
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  align-items: center; 
+  align-items: center;
 }
 
-/* Section title */
+/* Title */
 .projects-title {
   text-align: center;
   font-size: 2rem;
   font-weight: 700;
   margin-bottom: 2rem;
-  color:#e34293;
+  color: #e34293;
 }
 
-/* Horizontal scroll wrapper */
+/* Scroll wrapper */
 .projects-scroll {
   overflow: hidden;
   width: 100%;
   display: flex;
   justify-content: center;
-  align-items: center; /* vertical centering */
+  align-items: center;
 }
 
-/* Track containing duplicated cards for seamless scroll */
+/* Track */
 .projects-track {
-  display: inline-flex; /* ensures exact width of all cards */
+  display: flex;
+  flex-wrap: nowrap;
   gap: 1.2rem;
-  animation: scroll 120s linear infinite;
-  align-items: center; /* vertical centering of cards */
+  animation: scroll 100s linear infinite;
+  align-items: center;
 }
 
-/* Infinite scroll keyframes */
 @keyframes scroll {
   0% {
     transform: translateX(0);
   }
   100% {
-    transform: translateX(-50%); /* move by one set of cards */
+    transform: translateX(-50%);
   }
 }
 
-/* Individual project cards */
+/* Project card */
 .project-card {
   flex: 0 0 320px;
   height: 380px;
@@ -465,23 +541,22 @@ p{
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   perspective: 1000px;
 }
 
-/* 3D tilt + glow on hover */
 .project-card:hover {
   transform: rotateY(5deg) rotateX(3deg) scale(1.05);
-  box-shadow: 0 20px 40px rgba(30,58,138,0.3),0 0 10px rgba(30,58,138,0.2);
+  box-shadow: 0 20px 40px rgba(30, 58, 138, 0.3),
+    0 0 10px rgba(30, 58, 138, 0.2);
 }
 
-/* Project title + description always visible */
+/* Text */
 .project-title {
   font-size: 1.2rem;
   font-weight: 600;
   margin-bottom: 0.5rem;
-
 }
 
 .project-description {
@@ -496,7 +571,7 @@ p{
   -webkit-box-orient: vertical;
 }
 
-/* View Demo button appears only on hover */
+/* View Demo button */
 .project-link {
   display: inline-block;
   margin-top: 1rem;
@@ -507,7 +582,6 @@ p{
   text-decoration: none;
   opacity: 0;
   transform: translateY(10px);
-
   transition: opacity 0.3s ease, transform 0.3s ease, background 0.3s ease;
 }
 
@@ -516,20 +590,35 @@ p{
   transform: translateY(0);
 }
 
-/* Button hover micro-animation */
 .project-link:hover {
   transform: translateY(-2px) scale(1.05);
   background: linear-gradient(90deg, #8a1e62, #e93aaf);
 }
 
-/* Responsive adjustments */
-@media (max-width:1024px){
-  .project-card{flex:0 0 280px;height:360px;}
+/* Responsive */
+@media (max-width: 1024px) {
+  .project-card {
+    flex: 0 0 280px;
+    height: 360px;
+  }
 }
 
-@media (max-width:768px){
-  .project-card{flex:0 0 240px;height:auto;}
-  .projects-track{animation:scroll 90s linear infinite;} /* slower on mobile */
+@media (max-width: 768px) {
+  .projects-track {
+    animation: scroll 90s linear infinite;
+    gap: 0.8rem;
+  }
+
+  .project-card {
+    flex: 0 0 240px;
+    height: auto;
+  }
+
+  /* Always show button on mobile */
+  .project-link {
+    opacity: 1;
+    transform: none;
+  }
 }
 
 
@@ -615,6 +704,9 @@ p{
     bottom:0;
     width: 100%;
     
+}
+.social-links a + a {
+  margin-left: 12px;
 }
 
 /* Bubbles Container */
