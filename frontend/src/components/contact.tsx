@@ -4,6 +4,7 @@ import { fetchContact, sendContact } from "../api";
 import { FaLinkedin, FaGithub, FaEnvelope, FaPhoneAlt, FaDownload } from "react-icons/fa";
 import "../index.css";
 
+
 export default function ContactSection() {
   const [contact, setContact] = useState<Contact | null>(null);
   const [formData, setFormData] = useState<ContactFormData>({
@@ -102,7 +103,7 @@ export default function ContactSection() {
         <div className="resume-section" style={{ marginTop: "0.5rem" }}>
           <h3>Preview My Resume</h3>
           <a
-            href="public/Riya_Patel_Resume.pdf"
+            href="/Riya_Patel_Resume.pdf"
             target="_blank"
             rel="noreferrer"
             className="resume-button"
