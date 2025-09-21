@@ -23,7 +23,7 @@ export default function ProjectsSection() {
       <h2 className="projects-title">Projects</h2>
 
       {/* Horizontal scroll wrapper */}
-     <div
+    <div
   className="projects-scroll"
   onMouseEnter={handleMouseEnter}
   onMouseLeave={handleMouseLeave}

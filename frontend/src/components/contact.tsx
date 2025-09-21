@@ -99,16 +99,16 @@ export default function ContactSection() {
         {status && <p className="form-status">{status}</p>}
         
          {/* Resume Preview */}
-        <div className="resume-section" style={{ marginTop: "2rem" }}>
+        <div className="resume-section" style={{ marginTop: "0.5rem" }}>
           <h3>Preview My Resume</h3>
           <a
-            href="/Riya_Patel_Resume.pdf"
+            href="public/Riya_Patel_Resume.pdf"
             target="_blank"
             rel="noreferrer"
             className="resume-button"
           >
             <FaDownload style={{ marginRight: "0.5rem" }} />
-            View / Download Resume
+            View Resume
           </a>
         </div>
         
