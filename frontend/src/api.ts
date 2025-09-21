@@ -1,7 +1,7 @@
 // src/api.ts
 import type { About, Contact, Education, Project, Skills } from "./types/types";
 
-const BASE_URL = "https://riyapatel-portfolio.onrender.com";
+const BASE_URL = "https://riyapatel-portfolio.onrender.com/";
 
 export async function fetchAbout(): Promise<About> {
   const res = await fetch(`${BASE_URL}/about`);
