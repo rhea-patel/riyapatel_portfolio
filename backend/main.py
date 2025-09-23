@@ -6,7 +6,7 @@ from fastapi import FastAPI, Request # pyright: ignore[reportMissingImports]
 from fastapi.middleware.cors import CORSMiddleware # pyright: ignore[reportMissingImports]
 from dotenv import load_dotenv
 import os
-
+from mangum import Mangum
 
 load_dotenv("main.env")
 
@@ -103,6 +103,14 @@ education = [
     {"institution": " Dalhousie University", "degree": "Masters of Applied Computer Science", "duration": "Sep 2022 - May 2024", "location":"Halifax, Canada","details": ["Relevant Coursework: Data Structures and Algorithms, Web Development, Database Management Systems, Cloud Computing, Software Engineering, Operating Systems, Computer Networks, Cloud Solution Architecture, Mobile App Development."]},
     {"institution": "Indus University", "degree": "Bachelor of Technology in Information Technology Engineering", "duration": "June 2018 - May 2022", "location":"Ahmedabad, India","details": ["Relevant Coursework: Data Structures and Algorithms, Object-Oriented Programming, Database Management Systems, Web Technologies, Software Engineering, Operating Systems, Computer Networks, Mathematics for Computer Science."]}
 ]
+
+
+
+@app.get("/")
+def read_root():
+    return {"message": "Hello from FastAPI on Lambda!"}
+
+handler = Mangum(app)
 
 @app.get("/contact")
 def get_contact():
