@@ -9,7 +9,7 @@ import ContactPage from "./pages/contactpage";
 import "./index.css";
 import DraggableNav from "./components/DraggableNav";
 import Footer from "./components/foot";
-import { Analytics } from "@vercel/analytics/next"
+
 
 
 const App: React.FC = () => {
@@ -34,8 +34,7 @@ const App: React.FC = () => {
                         <Route path="/education" element={<EducationPage />} />
                         {/* <Route path="/employment" element={<EmploymentPage />} /> */}
                         <Route path="/skills" element={<SkillsPage />} />
-                    <Route path="/contact" element={<ContactPage />} />
-                    <Analytics />
+                    <Route path="/contact" element={<ContactPage />} />   
                     </Routes>
                 </main>
             <Footer />
