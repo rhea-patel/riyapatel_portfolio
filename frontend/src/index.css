@@ -209,7 +209,17 @@ p{
   clip: rect(0, 0, 0, 0);
   border: 0;
 }
+.current-label {
+  font-size: 0.85em;
+  margin-left: 6px;
+  color: #888;
+}
 
+@media (min-width: 769px) {
+  .current-label {
+    display: none; /* only show (current) on mobile */
+  }
+}
 
 .menu-toggle {
   display: none;

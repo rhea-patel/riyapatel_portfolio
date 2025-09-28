@@ -31,18 +31,19 @@ const DraggableNav: React.FC = () => {
       <ul className={`nav-list ${open ? "open" : ""}`}>
         {navItems.map((item) => (
           <li className="nav-item" key={item.name}>
-            <Link
-              to={item.path}
-              className={`nav-link ${
-                location.pathname === item.path ? "active" : ""
-              }`}
-              onClick={() => setOpen(false)}
-            >
-              {item.name}
-              {location.pathname === item.path && (
-                <span className="sr-only">(current)</span> // 👈 adds hidden text for screen readers
-              )}
-            </Link>
+          <Link
+  to={item.path}
+  className={`nav-link ${
+    location.pathname === item.path ? "active" : ""
+  }`}
+  onClick={() => setOpen(false)}
+>
+  {item.name}
+  {location.pathname === item.path && (
+    <span className="current-label">(current)</span>
+  )}
+</Link>
+
           </li>
         ))}
       </ul>
