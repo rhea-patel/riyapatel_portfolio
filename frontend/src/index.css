@@ -199,20 +199,21 @@ p{
 /* Mobile Styles    */
 /* ---------------- */
 
-.sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  border: 0;
+.active-link {
+  font-weight: bold;
+  color: #b22222; /* a clear highlight color */
 }
-.current-label {
-  font-size: 0.85em;
-  margin-left: 6px;
-  color: #888;
+
+/* Small "(current)" label, only in mobile */
+.current-indicator {
+  font-size: 0.8em;
+  color: #666;
+}
+
+@media (min-width: 768px) {
+  .current-indicator {
+    display: none; /* hide label on desktop */
+  }
 }
 
 @media (min-width: 769px) {

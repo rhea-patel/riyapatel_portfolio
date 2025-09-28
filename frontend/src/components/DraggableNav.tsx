@@ -31,16 +31,16 @@ const DraggableNav: React.FC = () => {
       <ul className={`nav-list ${open ? "open" : ""}`}>
         {navItems.map((item) => (
           <li className="nav-item" key={item.name}>
-          <Link
+      <Link
   to={item.path}
   className={`nav-link ${
-    location.pathname === item.path ? "active" : ""
+    location.pathname === item.path ? "active-link" : ""
   }`}
   onClick={() => setOpen(false)}
 >
   {item.name}
   {location.pathname === item.path && (
-    <span className="current-label">(current)</span>
+    <span className="current-indicator"> (current)</span>
   )}
 </Link>
 
