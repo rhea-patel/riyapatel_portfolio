@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 
+
 const DraggableNav: React.FC = () => {
   const location = useLocation();
   const [open, setOpen] = useState(false);
@@ -16,7 +17,11 @@ const DraggableNav: React.FC = () => {
   return (
     <nav className="navbar">
       <div className="nav-header">
-        <button className="menu-toggle" onClick={() => setOpen(!open)}>
+        <button
+          className="menu-toggle"
+          onClick={() => setOpen(!open)}
+          aria-label={open ? "Close menu" : "Open menu"} 
+        >
           <span className={`bar ${open ? "open" : ""}`}></span>
           <span className={`bar ${open ? "open" : ""}`}></span>
           <span className={`bar ${open ? "open" : ""}`}></span>
@@ -31,9 +36,12 @@ const DraggableNav: React.FC = () => {
               className={`nav-link ${
                 location.pathname === item.path ? "active" : ""
               }`}
-              onClick={() => setOpen(false)} // closes menu on click
+              onClick={() => setOpen(false)}
             >
               {item.name}
+              {location.pathname === item.path && (
+                <span className="sr-only">(current)</span> // 👈 adds hidden text for screen readers
+              )}
             </Link>
           </li>
         ))}
