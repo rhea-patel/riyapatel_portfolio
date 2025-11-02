@@ -16,7 +16,7 @@ const DraggableNav: React.FC = () => {
 
   return (
     <nav className="navbar">
-      <div className="nav-header">
+      <div className="nav-header"> 
         <button
           className="menu-toggle"
           onClick={() => setOpen(!open)}

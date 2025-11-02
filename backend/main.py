@@ -11,9 +11,9 @@ from mangum import Mangum
 load_dotenv("main.env")
 
 
-EMAIL_USER = os.getenv("EMAIL_USER")   # Gmail address used to send
-EMAIL_PASS = os.getenv("EMAIL_PASS")   # Gmail App Password
-EMAIL_TO = os.getenv("EMAIL_TO")       # Destination inbox
+EMAIL_USER = os.getenv("EMAIL_USER")  
+EMAIL_PASS = os.getenv("EMAIL_PASS")   
+EMAIL_TO = os.getenv("EMAIL_TO")      
 FRONTEND_URL = os.getenv("FRONTEND_URL", "https://riyapatel-portfolio.vercel.app")
 
 
@@ -149,15 +149,15 @@ def send_email_blocking(name: str, email: str, message: str):
     """
 
     msg = MIMEMultipart()
-    msg["From"] = EMAIL_USER
-    msg["To"] = EMAIL_TO
+    msg["From"] = EMAIL_USER # type: ignore
+    msg["To"] = EMAIL_TO # type: ignore
     msg["Subject"] = subject
     msg.attach(MIMEText(body, "plain"))
 
     try:
         with smtplib.SMTP_SSL("smtp.gmail.com", 465) as server:
-            server.login(EMAIL_USER, EMAIL_PASS)
-            server.sendmail(EMAIL_USER, EMAIL_TO, msg.as_string())
+            server.login(EMAIL_USER, EMAIL_PASS) # type: ignore
+            server.sendmail(EMAIL_USER, EMAIL_TO, msg.as_string()) # type: ignore
         print("✅ Email sent successfully!")
     except Exception as e:
         print("❌ Error sending email:", e)
