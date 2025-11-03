@@ -1,72 +1,49 @@
-import { type Certificate } from "../types/types";
+import React from "react";
+import CertificateCard from "../components/certificatecard";
+import type { Certificate } from "../types/types";
 
-const certificates: Certificate[] = [
-  {
-    id: 1,
-    title: "Oracle Cloud Infrastructure 2025 DevOps Professional (1Z0-1109-25)",
-    issuer: "Oracle",
-    date: "October 2025",
-    credentialId: "323468220OCI25DOPOCP",
-    link: "https://education.oracle.com",
-    category: "Certificate",
-  },
-  {
-    id: 2,
-    title:
-      "Oracle Cloud Infrastructure 2025 Multicloud Architect Professional (1Z0-1151-25)",
-    issuer: "Oracle",
-    date: "September 2025",
-    link: "https://education.oracle.com",
-    category: "Certificate",
-  },
-  {
+const CertificatesPage: React.FC = () => {
+  const certificates: Certificate[] = [
+    {
+      id: 1,
+      title: "Oracle Cloud Infrastructure 2025 DevOps Professional",
+      code: "(1Z0-1109-25)",
+      imageUrl: "/images/oci-devops-badge.png",
+      year: "2025",
+    },
+    {
+      id: 2,
+      title: "Oracle Cloud Infrastructure 2025 Multicloud Architect Professional",
+      code: "(1Z0-1151-25)",
+      imageUrl: "/images/oci-multicloud-badge.png",
+      year: "2025",
+    },
+  ];
+
+  const publication = {
     id: 3,
     title:
       "A Literature Review on Cryptocurrency with Special Reference to Bitcoin",
-    issuer: "GC Science Journal – Volume 8, Issue 12, Year 2021",
-    date: "2021",
-    category: "Publication",
-  },
-];
+    code: "Published in GC Science Journal, Volume 8, Issue 12, 2021",
+    imageUrl: "/images/publication-icon.png",
+    year: "2021",
+  };
 
-export default function CertificatesPage() {
   return (
-    <div className="certificates-container">
-      <h1 className="page-title">Certificates & Publications</h1>
-
-      <div className="cert-grid">
-        {certificates.map((item) => (
-          <div
-            key={item.id}
-            className={`cert-card ${
-              item.category === "Publication" ? "publication-card" : ""
-            }`}
-          >
-            <div className="cert-tag">
-              {item.category === "Publication" ? "📄 Publication" : "🏅 Certificate"}
-            </div>
-
-            <h2 className="cert-title">{item.title}</h2>
-            <p className="cert-issuer">{item.issuer}</p>
-            <p className="cert-date">{item.date}</p>
-
-            {item.credentialId && (
-              <p className="cert-id">Credential ID: {item.credentialId}</p>
-            )}
-
-            {item.link && (
-              <a
-                href={item.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="cert-link"
-              >
-                View Credential
-              </a>
-            )}
-          </div>
+    <div className="certificates-page">
+      <h2>Certifications</h2>
+      <div className="certificates-grid">
+        {certificates.map((cert) => (
+          <CertificateCard key={cert.id} certificate={cert} />
         ))}
+      </div>
+
+      <h2>Publication</h2>
+      <div className="certificates-grid">
+        <CertificateCard certificate={publication} />
       </div>
     </div>
   );
-}
+};
+
+export default CertificatesPage;
