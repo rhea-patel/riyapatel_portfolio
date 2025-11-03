@@ -40,6 +40,7 @@ export interface Certificate {
   code: string;
   imageUrl: string;
   year?: string;
+  link?: string;
 }
 export interface Education {
   institution: string;

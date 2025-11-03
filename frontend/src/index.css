@@ -554,27 +554,91 @@ p{
   }
 }
 
+/* Page wrapper */
+.certificates-page {
+  padding: 2rem;
+  text-align: center;
+  background-color: #f9f9f9; /* subtle background */
+}
 
-.cert-tag {
-  font-size: 0.8rem;
+/* Grid layout for certificates and publications */
+.certificates-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 1rem;
+}
+
+/* Card styling */
+.certificate-card {
+  width: 260px;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  text-align: center;
+  cursor: pointer;
+}
+
+.certificate-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Image in card */
+.certificate-image {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-bottom: 1px solid #eee;
+}
+
+/* Card content */
+.certificate-info {
+  padding: 1rem;
+}
+
+.certificate-info h3 {
+  font-size: 1rem;
+  color: #222;
+  margin-bottom: 0.5rem;
+}
+
+.certificate-info h3 a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.certificate-info p {
+  font-size: 0.9rem;
+  color: #555;
+  margin: 0.3rem 0;
+}
+
+/* Year text */
+.certificate-info .year {
   font-weight: 600;
-  background-color: #e8f0fe;
-  color: #1a73e8;
-  padding: 4px 10px;
-  border-radius: 999px;
-  display: inline-block;
-  margin-bottom: 0.8rem;
+  color: #e93aaf;
 }
 
-.publication-card .cert-tag {
-  background-color: #fff4e5;
-  color: #d97706;
+/* Optional: different style for publication card */
+.certificate-card.publication {
+  border: 2px dashed #e93aaf;
 }
 
-.publication-card {
-  border-left: 4px solid #d97706;
-  background-color: #fffaf5;
+.certificate-card.publication .certificate-image {
+  width: 60px; /* smaller icon for publication */
+  margin: 1rem auto;
 }
+
+.certificate-card.publication .certificate-info h3 {
+  color: #e93aaf;
+  font-size: 1rem;
+}
+
+
 
 /* Project card */
 .project-card {

@@ -22,4 +22,6 @@ const CertificateCard: React.FC<CertificateCardProps> = ({ certificate }) => {
   );
 };
 
+
+
 export default CertificateCard;
