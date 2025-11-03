@@ -506,6 +506,99 @@ p{
   border-left: 6px solid #1e3a8a; /* blue accent for Bachelors */
 }
 
+.certificates-page {
+  padding: 2rem;
+  text-align: center;
+  background-color: #f9f9f9;
+  min-height: 100vh;
+  font-family: Arial, sans-serif;
+}
+
+.certificates-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 1rem;
+}
+
+.certificate-card {
+  width: 260px;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  text-align: center;
+  cursor: pointer;
+}
+
+.certificate-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.certificate-image {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-bottom: 1px solid #eee;
+}
+
+.certificate-info {
+  padding: 1rem;
+}
+
+.certificate-info h3 {
+  font-size: 1rem;
+  color: #222;
+  margin-bottom: 0.5rem;
+}
+
+.certificate-info h3 a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.certificate-info p {
+  font-size: 0.9rem;
+  color: #555;
+  margin: 0.3rem 0;
+}
+
+.certificate-info .year {
+  font-weight: 600;
+  color: #e34293;
+}
+
+/* Publication card special styling */
+.certificate-card.publication {
+  border: 2px dashed #e34293;
+  width: 200px;
+}
+
+.certificate-card.publication .certificate-image {
+  width: 60px;
+  height: 60px;
+  margin: 1rem auto;
+  object-fit: contain;
+}
+
+.certificate-card.publication .certificate-info h3 {
+  color: #e34293;
+  font-size: 1rem;
+}
+
+.certificate-card.publication .certificate-info p {
+  font-size: 0.85rem;
+  color: #333;
+}
+
+.certificate-card.publication:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.12);
+}
+
 /* Container for the Projects section */
 /* Container */
 .projects-container {
@@ -552,28 +645,6 @@ p{
   100% {
     transform: translateX(-50%);
   }
-}
-
-
-.cert-tag {
-  font-size: 0.8rem;
-  font-weight: 600;
-  background-color: #e8f0fe;
-  color: #1a73e8;
-  padding: 4px 10px;
-  border-radius: 999px;
-  display: inline-block;
-  margin-bottom: 0.8rem;
-}
-
-.publication-card .cert-tag {
-  background-color: #fff4e5;
-  color: #d97706;
-}
-
-.publication-card {
-  border-left: 4px solid #d97706;
-  background-color: #fffaf5;
 }
 
 /* Project card */
