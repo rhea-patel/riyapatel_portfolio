@@ -34,6 +34,13 @@ export interface Project {
 //   description: string[];
 // }
 
+export interface Certificate {
+  id: number;
+  title: string;
+  code: string;
+  imageUrl: string;
+  year?: string;
+}
 export interface Education {
   institution: string;
   degree: string;

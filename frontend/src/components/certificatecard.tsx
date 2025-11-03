@@ -1,5 +1,5 @@
 import React from "react";
-import { type Certificate } from "../types/types";
+import type { Certificate } from "../types/types";
 
 interface CertificateCardProps {
   certificate: Certificate;
