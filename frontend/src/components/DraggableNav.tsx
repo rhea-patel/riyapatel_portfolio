@@ -12,6 +12,7 @@ const DraggableNav: React.FC = () => {
     { name: "Education", path: "/education" },
     { name: "Skills", path: "/skills" },
     { name: "Contact", path: "/contact" },
+    { name: "Certificates", path: "/certificates" },
   ];
 
   return (

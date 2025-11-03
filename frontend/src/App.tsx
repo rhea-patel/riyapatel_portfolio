@@ -6,6 +6,7 @@ import EducationPage from "./pages/educationpage";
 // import EmploymentPage from "./pages/employmentpage";
 import SkillsPage from "./pages/skillspage";
 import ContactPage from "./pages/contactpage";
+import CertificatesPage from "./pages/CertificatesPage";
 import "./index.css";
 import DraggableNav from "./components/DraggableNav";
 import Footer from "./components/foot";
@@ -32,9 +33,10 @@ const App: React.FC = () => {
                         <Route path="/" element={<Home />} />
                         <Route path="/projects" element={<ProjectsPage />} />
                         <Route path="/education" element={<EducationPage />} />
-                        {/* <Route path="/employment" element={<EmploymentPage />} /> */}
-                        <Route path="/skills" element={<SkillsPage />} />
-                    <Route path="/contact" element={<ContactPage />} />   
+                        {/* <Route path="/employment" element={<EmploymentPage />} /> */}  
+                    <Route path="/skills" element={<SkillsPage />} />
+                    <Route path="/contact" element={<ContactPage />} />
+                    <Route path="/certificates" element={<CertificatesPage />} />
                     </Routes>
                 </main>
             <Footer />

@@ -554,6 +554,28 @@ p{
   }
 }
 
+
+.cert-tag {
+  font-size: 0.8rem;
+  font-weight: 600;
+  background-color: #e8f0fe;
+  color: #1a73e8;
+  padding: 4px 10px;
+  border-radius: 999px;
+  display: inline-block;
+  margin-bottom: 0.8rem;
+}
+
+.publication-card .cert-tag {
+  background-color: #fff4e5;
+  color: #d97706;
+}
+
+.publication-card {
+  border-left: 4px solid #d97706;
+  background-color: #fffaf5;
+}
+
 /* Project card */
 .project-card {
   flex: 0 0 320px;
