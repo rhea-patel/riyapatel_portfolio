@@ -103,7 +103,7 @@ export default function ContactSection() {
         <div className="resume-section" style={{ marginTop: "0.5rem" }}>
           <h3>Preview My Resume</h3>
           <a
-            href="/Riya-Patel-Resume.pdf"
+            href="/Riya-Patel_Resume (3).pdf"
             target="_blank"
             rel="noreferrer"
             className="resume-button"
