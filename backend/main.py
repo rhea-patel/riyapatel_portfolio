@@ -48,44 +48,85 @@ about = {
     "summary": "I'm an Associate Full Stack Developer with a passion for building visually appealing and intuitive software. I specialize in bridging the gap between front-end and back-end, with a foundational understanding of cloud services and application deployment. I believe in the power of teamwork and leverage strong listening and communication skills to collaborate effectively with designers and fellow developers, ensuring every project is a success."
 }
 
-#My Skills 
 skills = [
     {
         "category": "Programming Languages",
-        "items": ["Python", "Java", "TypeScript", "JavaScript"]
+        "items": ["Java", "Python", "TypeScript", "JavaScript"]
     },
     {
-        "category": "Web Technologies",
-        "items": ["React.js", "Node.js", "FastAPI"]
-    },
-    {
-        "category": "API & Database",
-        "items": ["REST", "Postman", "SQL", "MySQL", "NoSQL"]
-    },
-    {
-        "category": "Cloud & DevOps",
-        "items": ["AWS", "Firestore", "GCP", "Docker", "CI/CD"]
+        "category": "Database Management",
+        "items": ["Postman", "Oracle PL/SQL", "MySQL", "NoSQL"]
     },
     {
         "category": "Methodologies",
-        "items": ["Agile", "Scrum", "SDLC", "Requirements Gathering"]
+        "items": ["Agile methodology", "Design Patterns", "Scrum", "Requirements Gathering"]
     },
     {
-        "category": "Tools & Platforms",
-        "items": ["Git", "GitHub", "Jira", "VS Code", "Figma"]
+        "category": "Soft Skills",
+        "items": ["Listening", "Communication", "Teamwork", "Adaptability", "Time-Management"]
+    },
+    {
+        "category": "Web Technologies",
+        "items": ["React.js"]
+    },
+    {
+        "category": "Automation Tools",
+        "items": ["Docker", "GitLab CI/CD", "BitBucket CI/CD", "Splunk", "Cypress", "Terraform"]
+    },
+    {
+        "category": "Cloud Infrastructure",
+        "items": ["AWS", "Firestore", "OCI"]
     }
 ]
 
 
+
 #Technical Experience
 projects = [
-    {"id": 1, "title": "Billsync", "description": "Bill splitting app built with FastAPI + React"},
-    {"id": 5, "title": "AWS Serverless Table-Tracker", "description": "Table Tracker is a full-stack, serverless application designed to streamline table reservations and customer management. My role involved architecting and developing a complete serverless solution on AWS, integrating Lambda functions and Amazon SNS to create a real-time, event-driven notification system.", "Link": "https://github.com/rhea-patel/aws-serverless-table-tracker"},
-    {"id": 2, "title": "Brownie Point", "description": "Android application implemented with best practices like SOLID principles and Code Smells that reduced loading times by 25%, enabling a more seamless experience for students accessing the course materials. Executed automated regression tests using JUnit, ensuring consistent performance and cutting testing cycle time by 40% across updates.", "Link": "https://github.com/rhea-patel/Brownie_Point"},
-    {"id": 3, "title": "CineVerse", "description": "Developed a Movie Ticket Booking System with 'Movie Description', 'FAQs', and 'Party Module' features, resulting in a 20% increase in repeat bookings. Framework: MERN.", "Link": "https://csci-5709-group-08.netlify.app"},
-    {"id": 4, "title": "WeatherAlert", "description": "Created a scalable weather alert system on AWS, combining SQS, SNS, and Lambda to enhance user engagement by 25% and reduce alert delivery delay by 50%. Conducted integration testing on AWS services (Lambda, EC2, API Gateway, S3) to ensure flawless data flow and 100% alert delivery during peak periods. Framework includes Lambda, EC2, API Gateway, S3, and SNS.", "Link": "https://github.com/rhea-patel/Advance_Cloud_Computing_Projects/tree/main/TermAssignment"},
-    {"id": 6, "title": "HealthCard NovaScotia", "description": "A native Kotlin Android application for managing a digital Nova Scotia health card. I designed and developed the entire app, implementing a secure user system with Firebase Authentication and Firestore while focusing on an intuitive and polished user experience.", "Link": "https://github.com/rhea-patel/healthcard_Nova_Scotia-kotlin"}
+    {
+        "id": 1,
+        "title": "Brownie Point",
+        "description": "Android app using SOLID principles and code optimizations, reducing loading times by 25% and improving overall performance. Automated regression tests with JUnit ensured stability across updates.",
+        "Link": "https://github.com/rhea-patel/Brownie_Point"
+    },
+    {
+        "id": 2,
+        "title": "CineVerse",
+        "description": "Movie ticket booking system with features like 'Movie Description', 'FAQs', and 'Party Module', increasing repeat bookings by 20%. Built with MERN stack.",
+        "Link": "https://csci-5709-group-08.netlify.app"
+    },
+    {
+        "id": 3,
+        "title": "WeatherAlert",
+        "description": "Scalable weather alert system on AWS using SQS, SNS, and Lambda, improving user engagement by 25% and reducing alert delivery delay by 50%.",
+        "Link": "https://github.com/rhea-patel/Advance_Cloud_Computing_Projects/tree/main/TermAssignment"
+    },
+    {
+        "id": 4,
+        "title": "AWS Serverless Table-Tracker",
+        "description": "Full-stack serverless application for table reservations, integrating AWS Lambda and SNS to deliver real-time notifications.",
+        "Link": "https://github.com/rhea-patel/aws-serverless-table-tracker"
+    },
+    {
+        "id": 5,
+        "title": "HealthCard NovaScotia",
+        "description": "Native Kotlin Android app for managing digital Nova Scotia health cards, with secure authentication and intuitive user experience using Firebase and Firestore.",
+        "Link": "https://github.com/rhea-patel/healthcard_Nova_Scotia-kotlin"
+    },
+    {
+        "id": 6,
+        "title": "Credit Card Fraud Detection using Machine Learning",
+        "description": "Machine learning solution for detecting fraudulent credit card transactions. Implemented data preprocessing, class imbalance handling, and trained models like Logistic Regression and Random Forest, evaluated with precision, recall, and F1-score.",
+        "Link": "https://github.com/rhea-patel/credit-card-fraud-smote-ml"
+    },
+    {
+        "id": 7,
+        "title": "Hurricane Fiona Power Restoration Path Optimization",
+        "description": "Developed optimized path-planning system for Nova Scotia Power to restore poles damaged by Hurricane Fiona. Used Dijkstra’s algorithm and Prim’s MST for efficient repair routes, minimizing fuel, equipment, and redundant travel. Framework: Core Java, DSA.",
+        "Link": "https://github.com/rhea-patel/hub-repair-dijkstra"
+    }
 ]
+
 
 # Employment History
 # employment = [
