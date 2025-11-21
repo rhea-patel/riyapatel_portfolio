@@ -506,101 +506,232 @@ p{
   border-left: 6px solid #1e3a8a; /* blue accent for Bachelors */
 }
 
+/* -----------------------------
+   Page Container & Title
+----------------------------- */
 .certificates-page {
+  max-width: 1100px;
+  margin: 5rem auto;
   padding: 2rem;
+  background: transparent;
   text-align: center;
-  background-color: #f9f9f9;
-  min-height: 100vh;
-  font-family: Arial, sans-serif;
+  animation: fadeInUp 0.8s ease-out;
 }
 
+.certificates-title {
+  font-size: 2.2rem;
+  font-weight: 500;
+  margin-bottom: 1.5rem;
+  color: #e34293; /* pink accent */
+}
+
+/* -----------------------------
+  Grid Layout
+----------------------------- */
 .certificates-grid {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2.5rem;
   justify-content: center;
-  gap: 2rem;
-  margin-top: 1rem;
+  margin-top: 0;
 }
 
-.certificate-card {
-  width: 260px;
-  background-color: #fff;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-  text-align: center;
-  cursor: pointer;
-}
-
-.certificate-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-}
-
-.certificate-image {
-  width: 100%;
-  height: 180px;
-  object-fit: cover;
-  border-bottom: 1px solid #eee;
-}
-
-.certificate-info {
-  padding: 1rem;
-}
-
-.certificate-info h3 {
-  font-size: 1rem;
-  color: #222;
-  margin-bottom: 0.5rem;
-}
-
-.certificate-info h3 a {
-  text-decoration: none;
-  color: inherit;
-}
-
-.certificate-info p {
-  font-size: 0.9rem;
-  color: #555;
-  margin: 0.3rem 0;
-}
-
-.certificate-info .year {
-  font-weight: 600;
+/* Heading color */
+.certificates-grid + h2,
+h2.section-title {
   color: #e34293;
 }
 
-/* Publication card special styling */
+/* -----------------------------
+   Common Card Styles
+----------------------------- */
+.certificate-card {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 1.5rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 1rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease, background 0.3s ease;
+}
+
+/* Card hover lift effect */
+.certificate-card:hover,
+.certificate-card:active {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 28px rgba(227, 66, 147, 0.15);
+}
+
+/* -----------------------------
+Certificate Cards (Oracle-style)
+----------------------------- */
+.certificate-card:not(.publication) {
+  border: 1px solid #d9d9d9;
+  text-align: left;
+  gap: 0.75rem;
+}
+
+.certificate-card:not(.publication) .certificate-image {
+  width: 100%;
+  height: 160px;
+  border-radius: 8px;
+  object-fit: cover;
+  border: 1px solid #ebebeb;
+  margin-bottom: 0.75rem;
+}
+
+/* Text */
+.certificate-card:not(.publication) .certificate-info h3,
+.certificate-card:not(.publication) .certificate-info p,
+.certificate-card:not(.publication) .certificate-info .year {
+  color: #e34293;
+}
+
+.certificate-card:not(.publication) .certificate-info h3 {
+  font-size: 1rem;
+  font-weight: 700;
+  margin: 0;
+  line-height: 1.35;
+}
+
+.certificate-card:not(.publication) .certificate-info p {
+  font-size: 0.85rem;
+  margin: 2px 0;
+}
+
+.certificate-card:not(.publication) .certificate-info .year {
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+/* Sweep hover effect */
+.certificate-card:not(.publication)::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 80%;
+  height: 100%;
+  background: linear-gradient(120deg, rgba(255,255,255,0), rgba(255,255,255,0.35), rgba(255,255,255,0));
+  transform: skewX(-15deg);
+  transition: none;
+}
+
+.certificate-card:not(.publication):hover::after,
+.certificate-card:not(.publication):active::after {
+  left: 120%;
+  transition: left 0.6s ease;
+}
+
+/* -----------------------------
+Publication Cards
+----------------------------- */
 .certificate-card.publication {
-  border: 2px dashed #e34293;
-  width: 200px;
+  background: #fff; /* neutral */
+  border-left: 4px solid #e34293; /* accent line */
+  padding: 1.5rem 1.25rem;
+  gap: 0.75rem;
+  text-align: left;
+  margin-top: 0rem;
+  grid-column: span 1;
+  grid-row: span 1;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease, background 0.3s ease;
 }
 
 .certificate-card.publication .certificate-image {
   width: 60px;
   height: 60px;
-  margin: 1rem auto;
+  margin-bottom: 1rem;
   object-fit: contain;
+  border-radius: 12px;
+  transition: transform 0.3s ease;
 }
 
-.certificate-card.publication .certificate-info h3 {
-  color: #e34293;
+.certificate-card.publication h3 {
   font-size: 1rem;
+  font-weight: 700;
+  color: #e34293;
+  margin-bottom: 0.5rem;
+
 }
 
-.certificate-card.publication .certificate-info p {
-  font-size: 0.85rem;
-  color: #333;
+.certificate-card.publication p {
+  font-size: 0.875rem;
+  color: #555;
+  line-height: 1.4;
+  text-align: center;
+  font-weight: 500;
 }
 
+.certificate-card.publication .year {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #e34293;
+  margin-top: 0.5rem;
+  text-align: center;
+}
+
+/* Text for certificates */
+.certificate-info h3,
+.certificate-info p,
+.certificate-info .year {
+  color: #e34293; /* pink */
+}
+
+/* Text for publications */
+.certificate-card.publication h3,
+.certificate-card.publication p,
+.certificate-card.publication .year {
+  color: #e34293; /* pink */
+}
+/* Hover effect */
 .certificate-card.publication:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.12);
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(221,132,72,0.6);
+  border-color: #ff66b2;
 }
+
+/* Image inside card */
+.certificate-card.publication .certificate-image {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 50%;
+  transition: transform 0.3s ease;
+}
+
+.certificate-card.publication:hover .certificate-image {
+  transform: scale(1.05);
+}
+
+/* -----------------------------
+  Mobile Responsive
+----------------------------- */
+@media (max-width: 768px) {
+  .certificate-card.publication {
+    width: 100%;
+    padding: 1rem;
+  }
+
+  .certificate-card.publication .certificate-image {
+    width: 50px;
+    height: 50px;
+  }
+
+  .certificate-card:not(.publication) .certificate-image {
+    height: 140px;
+  }
+}
+
 
 /* Container for the Projects section */
-/* Container */
 .projects-container {
   max-width: 1200px;
   margin: 4rem auto;
