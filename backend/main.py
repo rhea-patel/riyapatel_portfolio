@@ -54,8 +54,16 @@ skills = [
         "items": ["Java", "Python", "TypeScript", "JavaScript"]
     },
     {
+        "category": "Web Technologies",
+        "items": ["React.js","Node.js"]
+    },
+    {
+        "category": "Frameworks",
+        "items": ["SpringBoot", "Django", "FastAPI"]
+    },
+    {
         "category": "Database Management",
-        "items": ["Postman", "Oracle PL/SQL", "MySQL", "NoSQL"]
+        "items": ["Postman", "PostgreSQL", "MySQL", "NoSQL"]
     },
     {
         "category": "Methodologies",
@@ -64,10 +72,6 @@ skills = [
     {
         "category": "Soft Skills",
         "items": ["Listening", "Communication", "Teamwork", "Adaptability", "Time-Management"]
-    },
-    {
-        "category": "Web Technologies",
-        "items": ["React.js"]
     },
     {
         "category": "Automation Tools",
