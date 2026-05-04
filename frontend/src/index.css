@@ -917,9 +917,9 @@ Publication Cards
   max-width: 900px;
   margin: 5rem auto;
   padding: 2rem;
-  background: #f9f9f9;
+  background: var(--card-bg);
   border-radius: 1.5rem;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+  box-shadow: var(--card-shadow);
 }
 
 .skills-title {
@@ -927,6 +927,7 @@ Publication Cards
   font-size: 2.5rem;
   font-weight: 700;
   margin-bottom: 2rem;
+  color: var(--text);
 }
 
 .skills-grid {
@@ -948,10 +949,10 @@ Publication Cards
 }
 
 .skills-card {
-  background: #fff;
+  background: var(--card-bg);
   padding: 1.5rem;
   border-radius: 1rem;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--card-shadow);
   transition: transform 0.3s ease;
 }
 
@@ -972,8 +973,8 @@ Publication Cards
 }
 
 .skill-badge {
-  background: #e0f0ff;
-  color: #e34293;
+  background: var(--card-bg-opa);
+  color: var(--accent);
   padding: 0.4rem 0.8rem;
   border-radius: 999px;
   font-size: 0.875rem;
