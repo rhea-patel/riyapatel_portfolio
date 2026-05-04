@@ -1003,12 +1003,11 @@ Publication Cards
 
 .footer-wrapper {
     z-index: 1;
-  --footer-background: var(--accent);
-    display: grid;
+  --footer-background: var(--tube1);
+    display: flex;
     position: fixed;
-    grid-area: footer;
-    height: 2.5rem;
-    bottom:0;
+    inset: 0;
+    height: 100vh;
     width: 100%;
     
 }
@@ -1018,24 +1017,12 @@ Publication Cards
 
 /* Bubbles Container */
 .bubbles {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 0.2rem;
-    background: var(--footer-background);
-    filter: url("#blob"); 
+  display: none;
 }
 
 /* Individual Bubbles */
 .bubble {
-    position: absolute;
-    left: var(--position, 5%);
-    background: var(--footer-background);
-    border-radius: 65%;
-    animation: bubble-size var(--time, 1s) ease-in infinite var(--delay, 0s),
-                bubble-move var(--time, 1s) ease-in infinite var(--delay, 0s);
-    transform: translate(-50%, 100%);
+  display: none;
 }
 
 /* Footer Content */
@@ -1044,8 +1031,10 @@ Publication Cards
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem;
-  background: linear-gradient(90deg, var(--footer-background), rgba(255,255,255,0.02));
+    padding: 2rem;
+  min-height: 100vh;
+  width: 100%;
+  background: linear-gradient(90deg, var(--tube1), var(--tube2), var(--tube3));
   color: #F5F7FA;
 }
 
