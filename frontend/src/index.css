@@ -84,6 +84,31 @@ body {
   position: relative;
   transition: background 300ms ease, box-shadow 300ms ease, transform 300ms ease;
 }
+.theme-toggle .shader-mount {
+  position: absolute;
+  inset: 0;
+  border-radius: calc(var(--h) / 2);
+  overflow: hidden;
+  pointer-events: none;
+}
+.theme-toggle .shader-mount::after{
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(90deg, rgba(255,255,255,0.06), rgba(0,0,0,0.04));
+  mix-blend-mode: screen;
+  opacity: 0.6;
+  transition: background 300ms ease, opacity 300ms ease;
+}
+.theme-toggle.is-dark .shader-mount::after{
+  background: linear-gradient(90deg, var(--tube1), var(--tube2));
+  opacity: 0.8;
+}
+.theme-toggle.is-light .shader-mount::after{
+  background: linear-gradient(90deg, rgba(255,255,255,0.6), rgba(255,255,255,0.2));
+  opacity: 0.5;
+}
 .theme-toggle .toggle-thumb {
   --size: calc(var(--h) - var(--pad) * 2);
   position: absolute;

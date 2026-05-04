@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Link, useLocation } from "react-router-dom";
 
 
@@ -13,6 +13,8 @@ const DraggableNav: React.FC = () => {
     }
   });
 
+  const shaderRef = useRef<HTMLDivElement | null>(null);
+
   useEffect(() => {
     try {
       if (theme === 'dark') {
@@ -25,6 +27,41 @@ const DraggableNav: React.FC = () => {
       // ignore
     }
   }, [theme]);
+
+  useEffect(() => {
+    // dynamically import shader mount and shader; mount into shaderRef
+    let mount: any = null;
+    if (!shaderRef.current) return;
+    (async () => {
+      try {
+        const mod = await import(/* @vite-ignore */ "https://esm.sh/@paper-design/shaders");
+        const ShaderMount = (mod && (mod as any).ShaderMount) || (mod && (mod as any).default);
+        const liquid = (mod && (mod as any).liquidMetalFragmentShader) || (mod && (mod as any).liquidMetalFragmentShader);
+        if (!ShaderMount || !liquid) return;
+        mount = new ShaderMount(shaderRef.current, liquid, {
+          u_repetition: 1.5,
+          u_softness: 0.5,
+          u_shiftRed: 0.3,
+          u_shiftBlue: 0.3,
+          u_distortion: 0,
+          u_contour: 0,
+          u_angle: 100,
+          u_scale: 1.2,
+          u_shape: 1,
+          u_offsetX: 0,
+          u_offsetY: 0,
+        });
+      } catch (err) {
+        // fail silently if remote fails
+      }
+    })();
+
+    return () => {
+      try {
+        if (mount && typeof mount.dispose === 'function') mount.dispose();
+      } catch {}
+    };
+  }, []);
 
   const navItems = [
     { name: "Home", path: "/" },
@@ -55,6 +92,7 @@ const DraggableNav: React.FC = () => {
         >
           <span className="toggle-track" aria-hidden>
             <span className="toggle-thumb" />
+            <div ref={shaderRef as any} className="shader-mount" />
           </span>
           <span className="toggle-icons" aria-hidden>
             <svg className="icon-sun" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
