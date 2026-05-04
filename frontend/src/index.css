@@ -19,6 +19,7 @@
   --muted-border: #d9d9d9;
   --card-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
   --transition-fast: 0.25s ease-in-out;
+    --footer-height: 3.5rem;
 }
 
 html[data-theme="dark"]{
@@ -43,6 +44,11 @@ body {
   color: var(--text);
   transition: background var(--transition-fast), color var(--transition-fast);
 }
+
+  /* leave space for fixed footer */
+  body {
+    padding-bottom: var(--footer-height);
+  }
 
 .page-wrapper {
   display: flex;
@@ -1002,14 +1008,17 @@ Publication Cards
 }
 
 .footer-wrapper {
-    z-index: 1;
-  --footer-background: var(--tube1);
+    z-index: 1100;
+    --footer-background: var(--tube1);
     display: flex;
     position: fixed;
-    inset: 0;
-    height: 100vh;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: var(--footer-height);
     width: 100%;
-    
+    align-items: center;
+    justify-content: center;
 }
 .social-links a + a {
   margin-left: 12px;
@@ -1031,11 +1040,11 @@ Publication Cards
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 2rem;
-  min-height: 100vh;
-  width: 100%;
-  background: linear-gradient(90deg, var(--tube1), var(--tube2), var(--tube3));
-  color: #F5F7FA;
+    padding: 0 1rem;
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(90deg, var(--tube1), var(--tube2), var(--tube3));
+    color: #F5F7FA;
 }
 
 .content a {
