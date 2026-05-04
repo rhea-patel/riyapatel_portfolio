@@ -10,6 +10,7 @@ import CertificatesPage from "./pages/CertificatesPage";
 import "./index.css";
 import DraggableNav from "./components/DraggableNav";
 import Footer from "./components/foot";
+import TubesCursor from "./components/TubesCursor";
 
 
 
@@ -18,6 +19,7 @@ const App: React.FC = () => {
     return (
         <div className="page-wrapper">
             <DraggableNav />
+            <TubesCursor />
             <svg style={{ position: 'fixed', top: '100vh' }} xmlns="http://www.w3.org/2000/svg" version="1.1">
                 <defs>
                     <filter id="blob">
