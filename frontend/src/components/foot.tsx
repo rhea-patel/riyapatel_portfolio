@@ -3,27 +3,8 @@ import React from 'react';
 import { FaLinkedin, FaGithub, FaEnvelope } from 'react-icons/fa';
 
 const Footer: React.FC = () => {
-  // Generates 128 bubbles with random inline styles
-  const bubbles = Array.from({ length: 128 }).map((_, i) => (
-    <div
-      key={i}
-      className="bubble"
-      style={{
-        '--size': `${2 + Math.random() * 4}rem`,
-        '--distance': `${6 + Math.random() * 4}rem`,
-        '--position': `${-5 + Math.random() * 110}%`,
-        '--time': `${2 + Math.random() * 2}s`,
-        '--delay': `${-1 * (2 + Math.random() * 2)}s`,
-      } as React.CSSProperties} // Type assertion to handle CSS variables
-    />
-  ));
-
   return (
     <div className="footer-wrapper">
-      <div className="bubbles">
-        {bubbles}
-      </div>
-      
       <div className="content">
         <div>
           {/* Your actual content here */}
