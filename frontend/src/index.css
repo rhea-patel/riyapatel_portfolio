@@ -211,6 +211,44 @@ p{
     margin-inline-end: 0px;
     unicode-bidi: isolate;
 }
+
+/* PHQ-style hero */
+.phq-hero {
+  height: calc(100dvh - var(--footer-height));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem;
+  background: linear-gradient(180deg, rgba(0,0,0,0.02), rgba(0,0,0,0.04));
+}
+.phq-hero-inner {
+  max-width: 1100px;
+}
+.phq-hero-title {
+  font-family: 'Roboto Mono', monospace;
+  font-size: clamp(3rem, 8vw, 8rem);
+  letter-spacing: 0.5rem;
+  font-weight: 800;
+  margin: 0;
+  color: var(--text);
+  text-transform: uppercase;
+  line-height: 0.9;
+}
+.phq-hero-sub {
+  margin-top: 1rem;
+  font-size: clamp(1rem, 2.5vw, 1.5rem);
+  letter-spacing: 0.6rem;
+  color: var(--muted);
+  font-weight: 700;
+}
+.phq-hero-cta {
+  margin-top: 2.5rem;
+  font-size: 0.9rem;
+  color: var(--muted);
+  letter-spacing: 0.4rem;
+}
+
 .contact-form {
   display: flex;
   flex-direction: column;
