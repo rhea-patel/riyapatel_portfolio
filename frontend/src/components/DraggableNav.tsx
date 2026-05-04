@@ -7,7 +7,7 @@ const DraggableNav: React.FC = () => {
   const [theme, setTheme] = useState<'light'|'dark'>(() => {
     try {
       return localStorage.getItem('theme') === 'dark' ? 'dark' : 'light';
-    } catch (e) {
+    } catch {
       return 'light';
     }
   });
@@ -17,7 +17,9 @@ const DraggableNav: React.FC = () => {
       if (theme === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
       else document.documentElement.removeAttribute('data-theme');
       localStorage.setItem('theme', theme);
-    } catch (e) {}
+    } catch {
+      // ignore
+    }
   }, [theme]);
 
   const navItems = [
