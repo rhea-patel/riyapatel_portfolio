@@ -109,6 +109,50 @@ body {
   background: linear-gradient(90deg, rgba(255,255,255,0.6), rgba(255,255,255,0.2));
   opacity: 0.5;
 }
+
+/* Squishy toggle styles (based on Soulwire squishy buttons) */
+.squishy {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.squishy-input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+.squishy-button {
+  position: relative;
+  width: 64px;
+  height: 36px;
+  border-radius: 40px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.08), rgba(0,0,0,0.06));
+  box-shadow: inset 0 2px 6px rgba(0,0,0,0.15), 0 6px 18px rgba(2,6,23,0.12);
+  transition: background 300ms ease, box-shadow 300ms ease, transform 250ms cubic-bezier(.2,.9,.2,1);
+  display: inline-block;
+}
+.squishy-button .blob{
+  position: absolute;
+  top: 50%;
+  left: 6px;
+  transform: translateY(-50%);
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: linear-gradient(180deg,#fff,#f0f0f0);
+  box-shadow: 0 6px 16px rgba(16,24,40,0.18);
+  transition: left 350ms cubic-bezier(.2,.9,.2,1), width 350ms ease, background 300ms ease;
+}
+.squishy.checked .squishy-button{
+  background: linear-gradient(90deg,var(--tube3),var(--tube1));
+  box-shadow: 0 8px 22px rgba(0,0,0,0.28);
+}
+.squishy.checked .squishy-button .blob{
+  left: calc(100% - 32px);
+  width: 30px;
+  background: linear-gradient(180deg,var(--tube-strong),#ff63b8);
+}
+
 .theme-toggle .toggle-thumb {
   --size: calc(var(--h) - var(--pad) * 2);
   position: absolute;
