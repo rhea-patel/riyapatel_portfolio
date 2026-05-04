@@ -56,6 +56,69 @@ body {
   flex-grow: 1; 
   height: 100dvh;
 }
+
+/* Theme toggle (liquid-like animated switch) */
+.theme-toggle {
+  --w: 56px;
+  --h: 32px;
+  --pad: 4px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--w);
+  height: var(--h);
+  padding: 0;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  position: relative;
+}
+.theme-toggle:focus { outline: 2px solid rgba(255,255,255,0.12); outline-offset: 3px }
+.theme-toggle .toggle-track {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: calc(var(--h) / 2);
+  background: linear-gradient(90deg, rgba(255,255,255,0.08), rgba(0,0,0,0.06));
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.04), 0 4px 12px rgba(2,6,23,0.12);
+  position: relative;
+  transition: background 300ms ease, box-shadow 300ms ease, transform 300ms ease;
+}
+.theme-toggle .toggle-thumb {
+  --size: calc(var(--h) - var(--pad) * 2);
+  position: absolute;
+  top: var(--pad);
+  left: var(--pad);
+  width: var(--size);
+  height: var(--size);
+  border-radius: 50%;
+  background: linear-gradient(180deg,#fff,#f0f0f0);
+  box-shadow: 0 6px 16px rgba(16,24,40,0.2), inset 0 1px 0 rgba(255,255,255,0.6);
+  transition: transform 350ms cubic-bezier(.2,.9,.2,1), background 300ms ease, box-shadow 300ms ease;
+}
+.theme-toggle .toggle-icons{
+  position: absolute;
+  right: 6px;
+  left: 6px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  pointer-events:none;
+  color: rgba(255,255,255,0.9);
+}
+.theme-toggle .icon-sun, .theme-toggle .icon-moon{opacity:0.9}
+
+/* dark state */
+.theme-toggle.is-dark .toggle-track{
+  background: linear-gradient(90deg,var(--tube3),var(--tube1));
+  box-shadow: 0 6px 18px rgba(0,0,0,0.35), inset 0 1px 0 rgba(255,255,255,0.02);
+}
+.theme-toggle.is-dark .toggle-thumb{
+  transform: translateX(calc(var(--w) - var(--h)));
+  background: linear-gradient(180deg,var(--tube-strong),#ff63b8);
+  box-shadow: 0 10px 30px rgba(247,38,138,0.28), inset 0 1px 0 rgba(255,255,255,0.06);
+}
+
 /* Canvas for Tubes cursor effect */
 .tubes-canvas {
   position: fixed;
