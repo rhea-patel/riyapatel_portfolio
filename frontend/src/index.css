@@ -13,6 +13,10 @@
   --card-bg: #ffffff;
   --card-bg-opa: rgba(255,255,255,0.33);
   --accent: #e34293;
+  --tube1: #ff77b6;
+  --tube2: #53bc28;
+  --tube3: #6958d5;
+  --tube-strong: #ff008a;
   --nav-bg: #ffffff;
   --nav-text: #651313;
   --muted: #666666;
@@ -27,6 +31,10 @@ html[data-theme="dark"]{
   --card-bg: #0f1720;
   --card-bg-opa: rgba(255,255,255,0.03);
   --accent: #ff77b6;
+  --tube1: #ff77b6;
+  --tube2: #53bc28;
+  --tube3: #6958d5;
+  --tube-strong: #ff008a;
   --nav-bg: rgba(18,22,27,0.6);
   --nav-text: #e6eef3;
   --muted: #a0a8b3;
@@ -1003,7 +1011,7 @@ Publication Cards
 
 .footer-wrapper {
     z-index: 1;
-  --footer-background: var(--accent);
+  --footer-background: var(--tube1);
     display: grid;
     position: fixed;
     grid-area: footer;
@@ -1040,12 +1048,12 @@ Publication Cards
 
 /* Footer Content */
 .content {
-    z-index: 2;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem;
-  background: linear-gradient(90deg, var(--footer-background), rgba(255,255,255,0.02));
+  z-index: 2;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background: linear-gradient(90deg, var(--tube1), var(--tube2), var(--tube3));
   color: #F5F7FA;
 }
 
