@@ -7,12 +7,41 @@
 }
 
 
+:root{
+  --bg: #F5F7FA;
+  --text: #111827;
+  --card-bg: #ffffff;
+  --card-bg-opa: rgba(255,255,255,0.33);
+  --accent: #e34293;
+  --nav-bg: #ffffff;
+  --nav-text: #651313;
+  --muted: #666666;
+  --muted-border: #d9d9d9;
+  --card-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  --transition-fast: 0.25s ease-in-out;
+}
+
+html[data-theme="dark"]{
+  --bg: #0b0f14;
+  --text: #e6eef3;
+  --card-bg: #0f1720;
+  --card-bg-opa: rgba(255,255,255,0.03);
+  --accent: #ff77b6;
+  --nav-bg: rgba(18,22,27,0.6);
+  --nav-text: #e6eef3;
+  --muted: #a0a8b3;
+  --muted-border: rgba(255,255,255,0.06);
+  --card-shadow: 0 6px 20px rgba(2,6,23,0.6);
+}
+
 body {
   margin: 0;
   padding: 0;
   overflow-x: hidden;
   font-family: 'Open Sans', sans-serif;
-  background: #F5F7FA;
+  background: var(--bg);
+  color: var(--text);
+  transition: background var(--transition-fast), color var(--transition-fast);
 }
 
 .page-wrapper {
@@ -36,9 +65,9 @@ p{
   margin: 2rem auto 0;
   max-width: 500px;
   padding: 2rem;
-  background-color: #ffffff;
+  background-color: var(--card-bg);
   border-radius: 12px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--card-shadow);
   font-family: 'Open Sans', sans-serif;
   transition: all 0.3s ease-in-out;
 }
@@ -62,7 +91,7 @@ p{
 
 .contact-form button {
   padding: 0.85rem 1rem;
-  background-color: #e34293;
+  background-color: var(--accent);
   color: white;
   border: none;
   border-radius: 8px;
@@ -97,7 +126,7 @@ p{
   display: inline-flex;
   align-items: center;
   gap: 0.4rem;
-  background-color: #e34293;
+  background-color: var(--accent);
   color: white;
   padding: 0.5rem 1rem;       /* smaller padding */
   border-radius: 6px;         /* slightly smaller radius */
@@ -127,7 +156,7 @@ p{
 
 /* Desktop Styles */
 .navbar {
-  background: white;
+  background: var(--nav-bg);
   padding: 10px 20px;
   border-radius: 50px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
@@ -153,7 +182,7 @@ p{
 }
 
 .nav-link {
-  color: #651313;
+  color: var(--nav-text);
   text-decoration: none;
   padding: 12px 25px;
   display: block;
@@ -235,11 +264,27 @@ p{
   z-index: 1100;
 }
 
+.theme-toggle {
+  margin-left: 8px;
+  background: transparent;
+  border: 1px solid var(--muted-border);
+  color: var(--nav-text);
+  padding: 6px 8px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background var(--transition-fast), color var(--transition-fast), border-color var(--transition-fast);
+}
+
+.theme-toggle:hover{
+  background: rgba(0,0,0,0.04);
+}
+
 .bar {
   display: block;
   width: 100%;
   height: 3px;
-  background-color: #651313;
+  background-color: var(--nav-text);
   transition: all 0.3s ease;
 }
 
@@ -298,7 +343,7 @@ p{
   max-width: 800px;
   margin: 5rem auto;
   padding: 3rem 2rem;
-  background: linear-gradient(to bottom right, #ffffff, #f8f8f8);
+  background: var(--card-bg);
   border-radius: 1.5rem;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
   animation: fadeInUp 0.8s ease-out;
@@ -330,14 +375,14 @@ p{
 .about-title {
   font-size: 2rem;
   font-weight: 700;
-  color: #222;
+  color: var(--text);
   margin-bottom: 0.3rem;
 }
 
 .about-role {
   font-size: 1.2rem;
   font-weight: 500;
-  color: #ff4081;
+  color: var(--accent);
   margin-bottom: 0.3rem;
 }
 
@@ -353,7 +398,7 @@ p{
 
 .about-summary {
   font-size: 0.95rem;
-  color: #333;
+  color: var(--text);
   line-height: 1.6;
   max-width: 600px;
   margin: 0 auto;
@@ -405,7 +450,7 @@ p{
 
 /* Card Base */
 .education-card {
-  background: #ffffff51;
+  background: var(--card-bg-opa);
   border-radius: 1rem;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
   opacity: 0;
@@ -546,7 +591,7 @@ h2.section-title {
    Common Card Styles
 ----------------------------- */
 .certificate-card {
-  background: #ffffff;
+  background: var(--card-bg);
   border-radius: 12px;
   padding: 1.5rem 1.25rem;
   display: flex;
@@ -571,7 +616,7 @@ h2.section-title {
 Certificate Cards (Oracle-style)
 ----------------------------- */
 .certificate-card:not(.publication) {
-  border: 1px solid #d9d9d9;
+  border: 1px solid var(--muted-border);
   text-align: left;
   gap: 0.75rem;
 }
@@ -589,7 +634,7 @@ Certificate Cards (Oracle-style)
 .certificate-card:not(.publication) .certificate-info h3,
 .certificate-card:not(.publication) .certificate-info p,
 .certificate-card:not(.publication) .certificate-info .year {
-  color: #e34293;
+  color: var(--accent);
 }
 
 .certificate-card:not(.publication) .certificate-info h3 {
@@ -632,7 +677,7 @@ Certificate Cards (Oracle-style)
 Publication Cards
 ----------------------------- */
 .certificate-card.publication {
-  background: #fff; /* neutral */
+  background: var(--card-bg); /* neutral */
   border-left: 4px solid #e34293; /* accent line */
   padding: 1.5rem 1.25rem;
   gap: 0.75rem;
@@ -664,7 +709,7 @@ Publication Cards
 
 .certificate-card.publication p {
   font-size: 0.875rem;
-  color: #555;
+  color: var(--muted);
   line-height: 1.4;
   text-align: center;
   font-weight: 500;
