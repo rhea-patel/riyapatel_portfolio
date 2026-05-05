@@ -1,17 +1,14 @@
 // src/components/foot.tsx
 import React from 'react';
 import { FaLinkedin, FaGithub, FaEnvelope } from 'react-icons/fa';
-import DarkModeButton from './DarkModeButton';
 
 const Footer: React.FC = () => {
   return (
     <div className="footer-wrapper">
       <div className="content">
         <div>
+          {/* Your actual content here */}
           <p>&copy; {new Date().getFullYear()} Riya Patel. All Rights Reserved.</p>
-          <div style={{marginTop:8}}>
-            <DarkModeButton asLink="/contact">Contact Me</DarkModeButton>
-          </div>
         </div>
 
       <div className="social-links">
