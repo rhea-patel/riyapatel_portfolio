@@ -15,7 +15,7 @@
   --accent: #e34293;
   --nav-bg: #ffffff;
   --nav-text: #651313;
-  --muted: #f6bfbf;
+  --muted: #666666;
   --muted-border: #d9d9d9;
   --card-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
   --transition-fast: 0.25s ease-in-out;
@@ -139,7 +139,7 @@ body {
   width: 26px;
   height: 26px;
   border-radius: 50%;
-  background: linear-gradient(180deg,#fff,#f0f0f0);
+  background: linear-gradient(180deg,var(--card-bg),var(--card-bg-opa));
   box-shadow: 0 6px 16px rgba(16,24,40,0.18);
   transition: left 350ms cubic-bezier(.2,.9,.2,1), width 350ms ease, background 300ms ease;
 }
@@ -150,7 +150,7 @@ body {
 .squishy.checked .squishy-button .blob{
   left: calc(100% - 32px);
   width: 30px;
-  background: linear-gradient(180deg,var(--tube-strong),#ff63b8);
+  background: linear-gradient(180deg,var(--tube-strong),var(--accent));
 }
 
 .theme-toggle .toggle-thumb {
@@ -161,7 +161,7 @@ body {
   width: var(--size);
   height: var(--size);
   border-radius: 50%;
-  background: linear-gradient(180deg,#fff,#f0f0f0);
+  background: linear-gradient(180deg,var(--card-bg),var(--card-bg-opa));
   box-shadow: 0 6px 16px rgba(16,24,40,0.2), inset 0 1px 0 rgba(255,255,255,0.6);
   transition: transform 350ms cubic-bezier(.2,.9,.2,1), background 300ms ease, box-shadow 300ms ease;
 }
@@ -266,7 +266,7 @@ p{
 .contact-form input,
 .contact-form textarea {
   padding: 0.85rem 1rem;
-  border: 1px solid #ccc;
+  border: 1px solid var(--muted-border);
   border-radius: 8px;
   font-size: 1rem;
   width: 100%;
@@ -427,7 +427,7 @@ p{
 /* Small "(current)" label, only in mobile */
 .current-indicator {
   font-size: 0.8em;
-  color: #f6bfbf;
+  color: var(--muted);
 }
 
 @media (min-width: 768px) {
@@ -580,7 +580,7 @@ p{
 .about-location {
   font-size: 1rem;
   font-style: italic;
-  color: #f6bfbf;
+  color: var(--muted);
   margin-bottom: 1.5rem;
   text-align: center;
   font-family: 'Courier New', Courier, monospace;
@@ -758,7 +758,7 @@ p{
   font-size: 2.2rem;
   font-weight: 500;
   margin-bottom: 1.5rem;
-  color: #e34293; /* pink accent */
+  color: var(--muted);
 }
 
 /* -----------------------------

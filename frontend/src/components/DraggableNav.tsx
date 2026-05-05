@@ -1,26 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 
 const DraggableNav: React.FC = () => {
   const location = useLocation();
   const [open, setOpen] = useState(false);
-  const [theme, setTheme] = useState<'light'|'dark'>(() => {
-    try {
-      return localStorage.getItem('theme') === 'dark' ? 'dark' : 'light';
-    } catch {
-      return 'light';
-    }
-  });
-
-  useEffect(() => {
-    try {
-      if (theme === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
-      else document.documentElement.removeAttribute('data-theme');
-      localStorage.setItem('theme', theme);
-    } catch {
-      // ignore
-    }
-  }, [theme]);
+  // Site uses dark mode only; toggle UI removed.
 
   const navItems = [
     { name: "Home", path: "/" },
@@ -44,18 +28,7 @@ const DraggableNav: React.FC = () => {
           <span className={`bar ${open ? "open" : ""}`}></span>
         </button>
 
-        <div className={`theme-toggle squishy ${theme === 'dark' ? 'checked' : ''}`}>
-          <input
-            type="checkbox"
-            className="squishy-input"
-            checked={theme === 'dark'}
-            onChange={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
-            aria-label="Toggle theme"
-          />
-          <span className="squishy-button" aria-hidden>
-            <span className="blob" />
-          </span>
-        </div>
+        {/* dark-mode only — toggle removed */}
       </div>
 
       <ul className={`nav-list ${open ? "open" : ""}`}>
