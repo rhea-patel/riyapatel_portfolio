@@ -44,18 +44,17 @@ const DraggableNav: React.FC = () => {
           <span className={`bar ${open ? "open" : ""}`}></span>
         </button>
 
-        <div className="theme-toggle">
+        <div className={`theme-toggle squishy ${theme === 'dark' ? 'checked' : ''}`}>
           <input
-            id="shimmer-theme-toggle"
             type="checkbox"
-            className="shimmer-input"
+            className="squishy-input"
             checked={theme === 'dark'}
             onChange={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
             aria-label="Toggle theme"
           />
-          <label htmlFor="shimmer-theme-toggle" className="shimmer-toggle" aria-hidden>
-            <span className="shimmer-knob" />
-          </label>
+          <span className="squishy-button" aria-hidden>
+            <span className="blob" />
+          </span>
         </div>
       </div>
 
