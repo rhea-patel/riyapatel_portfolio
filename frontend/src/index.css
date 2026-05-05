@@ -15,7 +15,7 @@
   --accent: #e34293;
   --nav-bg: #ffffff;
   --nav-text: #651313;
-  --muted: #666666;
+  --muted: #f6bfbf;
   --muted-border: #d9d9d9;
   --card-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
   --transition-fast: 0.25s ease-in-out;
@@ -427,7 +427,7 @@ p{
 /* Small "(current)" label, only in mobile */
 .current-indicator {
   font-size: 0.8em;
-  color: #666;
+  color: #f6bfbf;
 }
 
 @media (min-width: 768px) {
@@ -580,7 +580,7 @@ p{
 .about-location {
   font-size: 1rem;
   font-style: italic;
-  color: #666;
+  color: #f6bfbf;
   margin-bottom: 1.5rem;
   text-align: center;
   font-family: 'Courier New', Courier, monospace;
@@ -707,13 +707,13 @@ p{
   margin-bottom: 0.25rem;
 }
 .education-degree {
-  color: #444;
+  color: #e6fdb1;
   font-size: 0.95rem;
   margin-top: 0.25rem;
 }
 .education-duration {
   font-size: 0.85rem;
-  color: #777;
+  color: #ffc7c7;
   margin-bottom: 0.5rem;
 }
 
