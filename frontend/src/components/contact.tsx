@@ -66,7 +66,7 @@ export default function ContactSection() {
   return (
     <section className="contact-section">
       <main>
-        <h2>Contact Me</h2>
+     
 
         {/* Contact Form */}
         <form onSubmit={handleSubmit} className="contact-form">
